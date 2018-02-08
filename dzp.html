@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<!--<link rel="stylesheet" href="css/media-100.css" />-->
+    <title>大转盘</title>
+    <style type="text/css">
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+          .rotate-bg{
+                width: 94%;
+                height: 6rem;
+                margin: 0 auto;
+                border: 1px solid #f45;
+                background: url(ly-plate.png) no-repeat;
+                background-size:cover;
+                text-align: center;
+                /*position: absolute;
+                top: 0;
+                left: 0;*/
+                margin-top: 0%;
+               
+            }
+            .rotate-bg img{
+            	width: 60%;
+            	margin-top: 1.2rem;	
+            	
+            }
+
+            /*.ly-plate div.lottery-star {
+                width: 2.46rem;
+                height: 2.46rem;
+                position: absolute;
+                margin: 0 auto;
+                border: 1px solid #000;
+                top: 1.12rem;
+                left: 1.28rem;
+                outline: none;
+            }
+
+                .ly-plate div.lottery-star #lotteryBtn {
+                    cursor: pointer;
+                    position: absolute;
+                    top: -1.6rem;
+                    left: -1.32rem;
+                }*/
+               
+               
+                 html{
+		                text-align: center;
+		              /*  background-color: #1664ad;*/
+		                font-size: 20px;
+		            }
+					.fl{
+						float: left;
+						
+					}
+					.fr{
+						float: right;
+					}
+					a{
+						text-decoration: none;
+					}
+					li{
+						list-style: none;
+					}
+		            .ly-plate {
+		               width: 100%;
+		               margin: 0rem auto;
+		               
+		            }
+					.bigC{
+						width: 96%;
+						margin: 0 auto;
+						display: block;
+						margin-top: 3.2rem;
+					}
+					.dpz_cons{
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 10.92rem;
+						/*padding-top: 1rem;*/
+						/*background: #FCD54F;*/
+						
+					}
+					
+					
+					
+               		.smallC{
+               			width:50%;
+               			margin:0 auto;
+               			position:absolute;
+               			top:7.4rem;
+               			left:4.04rem;
+               			
+               			
+               		}
+               		.dzp_all{
+               			width: 100%;
+               			height: 100%;
+               			position: relative;
+               			
+               		}
+               		.dzp_all .bgBig{
+               			width: 100%;
+               			
+               		}
+               		.dzp_all .ly-plate{
+               			/*position: absolute;*/
+               			/*top: 28%;*/
+               			/*left: 50%;*/
+               			/*transform: translate(-50%,-50%);*/
+            			margin-top: 1.6rem;
+               			
+               			
+               			
+               			
+               		}
+               		.money{
+               			width: 10rem;
+               			height: 1.4rem;
+               			line-height: 1.4rem;
+               			/*border: 1px solid #000;*/
+               			background: url(img/guang2.png);
+               			/*background: #fff;*/
+						margin: 1.2rem auto;
+						color: #f00;
+               			font-weight: 600;
+               			font-size: 1rem;
+               			margin-top: -3.3rem;
+               			
+               		}
+               		.money img{
+               			width: 90%;
+               			/*height: 1.4rem;*/
+               			
+               		}
+               		
+               		
+               		
+               		.entr{
+               			width: 37%;
+               			height: 1.4rem;
+               			line-height: 1.4rem;
+               			margin: 0 auto;
+               			margin-top: 2.2rem;
+               			/*background: #ccc;*/
+               			
+               			
+               		}
+               		.entr .dz{
+               			height: 1.4rem;
+               			line-height: 0.8rem;
+               			color: #fcd54f;
+               			font-size: 0.6rem;
+               		}
+               		.entr .dj{
+               			color: #fcd54f;
+               			font-size: 0.6rem;
+               			margin-top: 0.2rem;
+               		}
+               		.money_num{
+               			position: absolute;
+               			top: 3rem;
+						left: 50%;
+						transform: translate(-50%,-50%);
+               			
+               			
+               		}
+               		.init_money img{
+               			width: 3.4rem;
+               			margin: 0 auto;
+               			/*left: 50%;
+               			transform: translate(-50%,-50%);*/
+               			
+               		}
+               		
+               		.init_money{
+						color: #f00;
+               		}
+               		.init_money span{
+               			position: absolute;
+               			top:20.1rem;
+               			left: 50%;
+               			transform: translate(-50%,-50%);
+               		}
+               	.sn_name{
+               		color: #fff;
+               		width: 95%;
+               		height: 1.2rem;
+               		line-height: 0.8rem;
+               		padding-left: 2.5rem;
+               		margin-top: 2.38rem;
+               		margin-left: -4.4rem;
+               		margin-bottom: -3.6rem;
+               	}
+               	.sn_name span{
+               		font-size: 0.8rem;
+               	}
+               	.lay{
+	   				width: 100%;
+				    height: 10rem;
+				    display: none;
+				    background-color: #000;
+				    position: absolute;
+				    z-index: 400;
+				    left: 0;
+				    top: -0.4rem;
+				    opacity: 0.6;
+		   			
+		   		}
+               	
+               	.pop{
+	   				width: 90%;
+	   				height: 14rem;
+	   				background: #fff;
+	   				margin: 0 auto;
+	   				position: fixed;
+	   				top:4rem;
+	   				z-index: 5555;
+	   				left: 50%;
+	   				border-radius: 0.4rem;
+	   				transform: translate(-50%,-50%);
+		   			-webkit-transform: translateX(-50%);
+				    -ms-transform: translateX(-50%);
+				    display: none;
+	   			}
+               	.dzp_winer{
+               		font-size: 0.8rem;
+               		
+               	}
+               	.single_carousel{
+		    		width: 60%;
+		    		height: 1.4rem;
+		    		margin-left: 2.8rem;
+		    		margin-top: -0.4rem;
+		    		overflow: hidden;
+		    		color: #fff;
+		    		line-height: 1.4rem;
+		    	}	
+		    	.single_carousel ul li{
+		    		font-size: 0.7rem;
+		    		
+		    	}
+               	.pop_win{
+               		width: 90%;
+					margin: 0 auto;
+               		margin-top: 3rem;
+               		text-align: left;
+               		margin-left: 2rem;
+               		
+               	}
+               	.pop_winers{
+               		font-size: 0.8rem;
+               	}
+               	.back_dz{
+               		text-decoration: none;
+               		color: #000000;
+               		font-size: 0.8rem;
+               		display: none;
+               		
+               	}
+    </style>
+
+</head>
+<body>
+	<div class="dzp_all">
+		<img class="bgBig" src="img/dzp3.jpg" alt="" />
+		<div class="dpz_cons">
+			<div class="sn_name">
+				<span class="sn"></span>
+				<!--<span class="u_name"></span>-->
+			</div>
+			<div class="ly-plate">
+				<img class="bigC" src="img/ly-plate.png" id="bigC" alt="" />
+				<img class="smallC" src="img/rotate-static2.png" id="lotteryBtn">
+			    <!--<div class="rotate-bg">
+			    	<img class="smallC" src="rotate-static.png" id="lotteryBtn">
+			    </div>-->
+			
+			    <!--<div class="lottery-star">
+			    	<img src="rotate-static.png" id="lotteryBtn">
+			    </div>-->
+			</div>
+			
+			<div class="money" style="position: relative;opacity: 0;">
+				<img src="img/guang2.png" alt="" />	
+				<span class="money_num"></span>
+			</div>
+			<div class="init_money">
+				<img src="img/z.png" alt="" />
+				<span class="once"></span>
+			</div>
+			<div class="single_carousel">
+				<ul>
+					<li class="dzp_winer"></li>
+					<li class="dzp_winer"></li>
+					<li class="dzp_winer"></li>
+					<li class="dzp_winer"></li>
+				</ul>
+			</div>
+			<div class="entr">
+				<a class="fl dz" href="http://www.psjia.com/pssc/fontxz/list_18_5.html">点赞<br/>上传</a>
+				<a class="fr dj" href="http://www.jq22.com/">兑奖</a>
+			</div>
+		</div>
+		<div class="lay">
+					
+		</div>
+		<div class="pop">
+			<ul class="pop_win">
+				<li class="pop_winers"></li>
+				<li class="pop_winers"></li>
+				<li class="pop_winers"></li>
+				<li class="pop_winers"></li>
+				<li class="pop_winers"></li>
+			</ul>
+			<a class="back_dz" href="https://www.baidu.com/">返回点赞</a>
+		</div>
+		
+	</div>
+    <script type="text/javascript" src="js/flexible.js" ></script> 
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script src="Js/jQueryRotate.2.2.js"></script>
+	<script src="Js/jquery.easing.min.js"></script>
+	<script type="text/javascript">
+		
+	$(function(){
+	 	var　list_01=localStorage.getItem("list_01");
+		var　list_02=localStorage.getItem("list_02");
+		var　list_03=localStorage.getItem("list_03");
+		var　list_04=localStorage.getItem("list_04");
+		var　list_05=localStorage.getItem("list_05");
+		$(".dzp_winer").eq(0).html(list_01);
+		$(".dzp_winer").eq(1).html(list_02);
+		$(".dzp_winer").eq(2).html(list_03);
+		$(".dzp_winer").eq(3).html(list_04);
+		$(".dzp_winer").eq(4).html(list_05);
+		
+		function fun(){
+			$(".single_carousel ul").animate({"margin-top":"-1.4rem"},function(){    
+				    $(".single_carousel ul li:eq(0)").appendTo($(".single_carousel ul"));
+					$(".single_carousel ul").css("margin-top",0);    //css中属性与属性值用逗号隔开
+				});
+	       }
+		setInterval(fun,2000);
+		
+	});
+				
+		
+		
+	$(function () {
+    	
+		var isRotate = false;
+//      var name = localStorage.getItem("name");
+        var sn = localStorage.getItem("sn");
+        var once = localStorage.getItem("lottery");
+        console.info(once+"kjw");
+        $(".sn").html(sn);
+//      $(".u_name").html(name);
+        
+        if(once==""|| once=="0"){
+        	$(".once").html("");
+
+        }else{
+
+        	$(".once").html(once+"元");
+        }
+        
+        
+        
+        
+//      console.info(state+"dddd");
+        function MainGrid() {
+            var that = this;
+            this.init = function () {
+            	
+				$("#lotteryBtn").bind("click",function () {
+
+					that.RoteClick();
+					var dz_tel = localStorage.getItem("dz_tel");  
+//					var dz_tel=[15738871759];
+					var reg1=/^1[3|4|5|8|9][0-9]\d{4,8}$/;
+					var tel_val= reg1.test($("#tel").val())     //正式
+					
+
+					if(dz_tel!=" "&&dz_tel!=""){
+						
+						console.info("不空的")
+						var userid = localStorage.getItem("userid");
+						var orderid = localStorage.getItem("orderid");
+						var sn = localStorage.getItem("sn");
+//						data:{"userid":userid,"orderid":orderid,"dz_tel":dz_tel,"sn":sn,"type":"2","token":"ad252sdf4hs32adkifs25a2gasd5a0ae5fsdfhjbvh"},
+
+						$.ajax({
+							type:"get",
+							url:"dzp.json",
+							async:true,
+							success:function(data){
+								console.info(data.state)
+								var money=data.money;
+								var state=data.state;
+								localStorage.setItem("money",data.money)
+								localStorage.setItem("state",data.state);
+								console.info(data+"kjwsss");
+								for(var j=0;j<$(".pop_winers").length;j++){
+									$(".pop_winers").eq(j).append(data.list[j]); 
+								}
+									
+					//      		不同的状态显示
+					        		if(state==1000){
+					
+					        		
+					//				对应的金额显示对应的区域
+									var data = [money]; //返回的数组
+									
+					                data = data[Math.floor(Math.random() * data.length)];
+//									if(money==0){
+//					        			var get_money = localStorage.getItem("get_money");
+//					        			var get_name = localStorage.getItem("get_name");
+//										var text="您的红包被"+get_name+"抢走了,他抢到了"+get_money+"元";
+//										MainGrid.prototype.rotateFunc(0,0,text)
+//										
+//									}
+									
+					
+					
+						//		   10元到99元之间
+					               if (data>=10 &&data<=99.99) {
+										var num=parseInt(data)/2.25;
+										var data=data+"元"
+										MainGrid.prototype.rotateFunc(1,num,data)
+					                  
+					                   
+					                }
+					//				100元到129元之间
+					                if (data>=100 && data<=129.99) {
+					                	
+										if(data>=100 && data<107){
+											var num=parseInt(data)*0.45;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+										
+										if(data>=107 && data<=115){
+											var num=parseInt(data)*0.59;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+										
+										if(data>115 && data<=122){
+											var num=parseInt(data)*0.64;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+										
+										if(data>122 && data<=129.99){
+											var num=parseInt(data)*0.68;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+									}
+					
+					                
+					                if (data>=0.01 &&data<=0.09) {
+										var num=parseInt(data*1000)/2.2+90;
+										var data=parseInt(data*100)+"分";
+										MainGrid.prototype.rotateFunc(3,num,data)
+					                  
+					                   
+					                }
+					
+					                
+					                
+					                
+					                
+					//              130-149元
+					                 if (data>=130 && data<=149.99){
+											if(data>=130 && data<=133){
+												var num=parseInt(data)*1.04;
+												var data=data+"元"
+												MainGrid.prototype.rotateFunc(4,num,data);
+												return;
+											}
+											if(data>=134 && data<140){
+												var num=parseInt(data)*1.14;
+												var data=data+"元"
+												MainGrid.prototype.rotateFunc(4,num,data);
+												return;
+											}
+											if(data>=140 && data<=144){
+												var num=parseInt(data)*1.15;
+												var data=data+"元"
+												MainGrid.prototype.rotateFunc(4,num,data);
+												return;
+											}
+											if(data>144 && data<=149.99){
+												var num=parseInt(data)*1.19;
+												var data=data+"元"
+												MainGrid.prototype.rotateFunc(4,num,data);
+												return;
+											}
+									}
+					                
+					                
+					//              10-90分
+					                
+					                 if (data>=0.1 && data<=0.99){ 
+											var num=parseInt(data*100)/2.25+178;
+											var data=parseInt(data*100)+"分";
+											MainGrid.prototype.rotateFunc(5,num,data)
+									}
+					                
+					                if (data>=150 && data<=179.99) {
+					                	
+										if(data>=150 && data<157){
+											var num=parseInt(data)*0.45+157.5;
+					//						var data=parseInt(data)+50;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+										
+										if(data>=157 && data<=165){
+											var num=parseInt(data)*0.56+157.5;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data);
+											return;
+											
+										}
+										
+										if(data>165 && data<=172){
+											var num=parseInt(data)*0.6+157.5;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+										
+										if(data>172 && data<=179.99){
+											var num=parseInt(data)*0.61+157.5;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(2, num,data)
+											return;
+											
+										}
+									}
+					                
+					                
+					                //270-360度      1-9元
+					               if (data>=1 &&data<=9.99) {
+										var num=parseInt(data*10)/2.1+265;
+										var data=data+"元"
+										
+										MainGrid.prototype.rotateFunc(1,num,data)
+					                  
+					                   
+					                }
+					                
+					                //180-209元之间          315---360之间
+					                if (data>=180 && data<=209) {
+					                	if(data>=180 && data<187){
+											var num=parseInt(data)*0.26+270;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(8, num,data);
+											return;
+											
+										}
+										
+										if(data>=187 && data<=195){
+											var num=parseInt(data)*0.34+270;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(8, num,data);
+											return;
+											
+										}
+										
+										if(data>195 && data<=202){
+											var num=parseInt(data)*0.4+270;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(8, num,data);
+											return;
+											
+										}
+										
+										if(data>202 && data<=209){
+											var num=parseInt(data)*0.42+270;
+											var data=data+"元"
+											MainGrid.prototype.rotateFunc(8, num,data);
+											return;
+											
+										}
+									}
+					        			
+					        			
+//										MainGrid.prototype.rotateFunc(1,0,"恭喜中奖")
+										return;
+										
+									}
+					        		
+									if(state==1001){
+					
+										MainGrid.prototype.rotateFunc(1,0,"信息不正确")         
+										return;
+									}
+									if(state==1002){
+										MainGrid.prototype.rotateFunc(1,0,"没有找到相关资源")        
+										return;
+									}
+									if(state==1003){
+										MainGrid.prototype.rotateFunc(1,0,"不允许重复抽奖")         
+										return;
+										
+									}
+									if(state==1004){
+										MainGrid.prototype.rotateFunc(1,0,"很遗憾，您来晚一步")
+										return;
+									}
+									if(state==1005){
+										MainGrid.prototype.rotateFunc(1,0,"请上传分享集赞截图")       
+										return;
+									}
+									
+									if(state==1006){
+										
+										MainGrid.prototype.rotateFunc(1,0,"系统维护，请稍后再试")
+										return;
+									}
+					        		
+					        		
+					        		
+					        		
+					        		
+					        		
+									
+									if(state==0 || state==""){
+										MainGrid.prototype.rotateFunc(1,0,"请上传点赞图片")
+										return;
+										
+									}
+									
+					
+													
+							
+		
+		
+		
+		
+		
+							},
+							error:function(data){
+								
+								
+								
+							}
+							
+							
+							
+							
+							
+							});
+						}else{
+							MainGrid.prototype.rotateFunc(1,0,"请上传点赞图片")
+							
+						}
+					
+				
+				});
+            };
+            
+        }
+
+        MainGrid.prototype.rotateFunc = function (awards, angle, text,state) {
+            //alert('hello');
+            //alert("zzzzzzzzzz");
+            //alert(awards+','+angle+','+text);
+            var that = this;
+//          $('#bigC').stopRotate();
+            $('#lotteryBtn').stopRotate();
+
+            $("#lotteryBtn").rotate({
+				
+                angle: 0,
+
+				duration: 8000,
+				
+				animateTo: angle + 3600, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+				
+//				easing : $.easing.easeInSine,
+				
+                callback: function () {
+
+//                  that.init();
+					 grid.init();
+					 if(text=="请上传点赞图片"){
+                    	alert("请上传点赞图片");
+                    	return;
+                    }
+					var state=localStorage.getItem("state");
+					console.info(state);
+					if(state==1000||state==1003||state==1004){
+						MainGrid.prototype.showDailog();
+					}
+					if(state==1005){
+						var yes_dz = confirm("你还没上传点赞图片要去点赞吗")
+						if(yes_dz==true){
+							window.location="https://www.baidu.com/"
+						}
+						return;
+					}
+					if(state==1002){
+						alert("没有找到相关资源")
+						return;
+					}
+					if(state==1006){
+						alert("系统维护,请稍后再试")
+						return;
+					}
+					if(state==1001){
+						alert("信息不正确")
+						return;
+					}
+					
+					
+					
+					
+
+
+                    $(".money").css("opacity","1");
+                    $(".init_money").css("opacity","0");
+                    $(".money_num").html(text);
+//					alert("aaa")
+                    
+                    
+//                  在这里弹出kjw
+                    
+                    
+                    if(text.length>5){
+                    	$(".money_num").css("font-size","0.6rem");
+                    	return;
+                    }else{
+                    	$(".money_num").css("left","50%")
+                    	
+                    	
+                    }
+                    
+
+                },
+              
+                
+                
+
+            });
+            
+            
+            
+//           $("#bigC").rotate({
+				
+//              angle: 0,
+
+//				duration: 3000,
+				
+//				animateTo: angle + 1000, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+				
+//				easing : $.easing.easeInSine,
+				
+//              callback: function () {
+//
+//                  that.init();
+//                  //alert('bbb');
+//                  alert(text);
+//
+//              }
+
+//          });
+            
+            
+//          if(angle){
+//          	
+//          	
+//          	
+//          }
+			console.info(angle+"度");
+            
+            
+            
+            
+        }
+        
+//      弹出框
+
+		MainGrid.prototype.showDailog=function() {
+//			console.info("哈哈吧v哈")
+			$(".lay").show();
+			$(".pop").show();
+			$(".close_all").show();
+			$(".code_fix").show();
+			var dH = $(document).height(); //获取文档的高度
+			$(".lay").css("height", dH); //黑色遮罩层高度设置为文档高度
+			var wW = $(window).width(), //window的宽度
+				wH = $(window).height(), //window的高度
+				pW = $(".pop").width(), //弹出层的宽度
+				pH = $(".pop").height(), //弹出层的高度
+				pL = (wW - pW) / 2.25,        
+				pT = (wH - pH) / 2;
+		};
+
+		$(".lay").bind("click", function() {
+			$(".lay").fadeOut();
+			$(".pop").hide();
+			$(".pop_winers").html("");
+		});
+
+
+        
+        
+
+       
+
+        MainGrid.prototype.timeOut = function () {
+            var that = this;
+            $("#lotteryBtn").rotate({
+
+                angle: 0,
+
+                duration: 5000,
+
+                animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+
+                callback: function () {
+                    that.init();
+                   // this.click();
+                    alert('网络超时')
+                }
+            });
+
+        }
+        
+        
+        MainGrid.prototype.RoteClick = function () {
+
+//            alert('kkkkkkkkkkk');
+		
+            $("#lotteryBtn").unbind("click");
+//          var time = [0, 1];
+//
+//          time = time[Math.floor(Math.random() * time.length)];
+//
+//			console.info(time);
+//
+//          if (time == 0) {
+//              this.timeOut(); //网络超时
+//              
+//          }
+//
+//          if (time == 1) {
+
+//              var data = [1,2,3,4,5,6,7,8]; //返回的数组
+
+				
+        		var money = localStorage.getItem("money");
+        		var state = localStorage.getItem("state");
+        		console.info(state+"状态")
+        		console.info(money+"金钱")
+        	
+//      	if($(".money img").css("display","block")&&!$(".money_num").html("")){
+//      			MainGrid.prototype.showDailog();
+//      		
+//      	}
+    	
+        	
+                
+               
+
+        };
+
+      
+        var grid = new MainGrid();
+        grid.init();
+
+
+       
+
+
+    })
+
+</script>	
+    
+    
+    
+</body>
+</html>
+<!--<script src="Js/jquery-1.11.1.min.js"></script>-->
+
+

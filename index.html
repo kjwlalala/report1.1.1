@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;"name="viewport" />-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+	
+	<title>我的酒精代谢能力基因检测报告</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		.fr{
+			float: right;
+		}
+		.fl{
+			float: left;
+		}
+		html{font-size: 20px;width: 100%;height: 100%;}
+		.cont .imgs{
+			font-size: 0;
+		}
+		.cont .imgs img{
+			width: 100%;
+			background: url(img/loading.gif) 50% no-repeat;
+			
+		} 
+		.cont .datas{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 19rem;
+			/*border: 1px solid #000;*/
+			box-sizing: border-box;
+			
+			
+		}
+		.datas .top{
+			width: 100%;
+			height: 8rem;
+			/*background: #048F74;*/
+			/*border: 1px solid #000000;*/
+			box-sizing: border-box;
+			margin-top: 5rem;
+			
+			
+		}
+		.top .bgName{
+			color: #fff;
+			margin-top: 1rem;
+			margin-left: 2.3rem;
+			font-size: 0.8rem;
+			display: inline-block;
+			
+			
+			
+		}
+		.top .gene{
+			float: right;
+			color: #fff;
+			margin-top: 1.1rem;
+			/*font-size: 0.8rem;*/
+			margin-right: 2.5rem;
+
+		
+		
+		}
+		
+		.gene .gene1,.gene2{
+			font-size: 0.6rem;
+			
+			
+		}
+		.top .bott{
+			width: 100%;
+			height: 5rem;
+			/*background: #f45;*/
+			margin-top: 1.2rem;
+			/*border: 1px solid #000;*/
+			box-sizing: border-box;
+			
+			
+			
+		}
+		.bott .prec{
+			color: #8cecfa;
+			font-size: 0.8rem;
+			margin-top: -0.6rem;
+			margin-left: 1.3rem;
+			margin-bottom: 0.2rem;
+			
+			
+		}
+		.bott .introduce{
+			width: 7rem;
+			height: 3rem;
+			line-height: 0.8rem;
+			margin-left: 1.3rem;
+			font-size: 0.5rem;
+			color: #fff;
+			display: inline-block;
+			/*border: 1px solid #f45;*/
+			box-sizing: border-box;
+			
+			
+		}
+		.bott .shuyu{
+			float: right;
+			color: #8cecfa;
+			font-size: 0.7rem;
+			margin-right: 2.2rem;
+			margin-top: 0.2rem;
+		}
+		.datas .result{
+			width: 100%;
+			height: 15rem;
+			/*border: 1px solid #4f5;*/
+			box-sizing: border-box;
+			/*background: #000;*/
+			margin-top: 0.5rem;
+			
+		}
+		.result .res{
+			margin-left: 1.6rem;
+			margin-bottom: 1.4rem;
+			
+		}
+		.result .res .poem{
+			width: 3rem;
+			height: 0.8rem;
+			font-size: 0.6rem;
+			background: #fff;
+			margin-left: 3.6rem;
+			padding: 0.2rem;
+			margin-right: 0.2rem;
+			
+		}
+		
+		.hear{
+			font-size: 0.4rem;
+			color: #fff;
+			float: right;
+			margin-right: 0.3rem;
+			width: 2.6rem;
+			height: 1rem;
+			line-height: 0.7rem;
+			padding: 0.2rem;
+				/*background: #9e3d46;*/
+			background: url(img/hear.png) no-repeat;
+			background-size:cover;
+			margin-top: 0.2rem;
+			text-align: center;
+			opacity: 0;
+		}
+		.hear5{
+			opacity: 0;
+			margin-right: 7.4rem;
+			margin-top: 0.4rem;
+			background: url(img/hear5.png) no-repeat;
+			background-size: cover;
+			width: 2.6rem;
+			height: 1.2rem;
+			line-height: 1.4rem;
+			
+		}
+		.stars{
+			width: 6rem;
+			height: 1.1rem;
+			overflow: hidden;
+			margin-top: 0.1rem;
+		}
+		.stars img{
+			width: 100%;
+			
+		
+		}
+		.cat{
+			width: 100%;
+			display: none;
+		}
+		
+		.buy img{
+			width: 20%;
+			position: absolute;
+			top: 24rem;
+			right: 0.6rem;
+			
+			
+		}
+		
+		
+
+		.get_redbag{
+			position: absolute;
+			top: 28.7rem;
+			left: 0;
+			width: 100%;
+			height: 28.2rem;
+			/*border: 1px solid #fff;*/
+			box-sizing: border-box;
+			
+			
+		}
+		
+		
+		
+		.cons .imgs{
+	    		width: 100%;
+	    		text-align: center;
+	    		margin-top: 2rem;
+	    		
+	    		
+	    	}
+	    	.cons .imgs img{
+	    		width: 80%;
+	    	}
+	    	.single_carousel{
+	    		width: 60%;
+	    		height: 1.4rem;
+	    		margin-left: 2.8rem;
+	    		margin-top: -0.4rem;
+	    		overflow: hidden;
+	    		color: #fff;
+	    		line-height: 1.4rem;
+	    	}	
+	    	.single_carousel ul li{
+	    		font-size: 0.7rem;
+	    	}
+	    	
+	    	.explain{
+	    		width: 80%;
+	    		height: 3rem;
+	    		margin-left: 2.5rem;
+	    		color: #fff;
+	    		margin-top: 0.5rem;
+	    		
+	    	}
+	    	.explain .exp1{
+	    		font-size: 0.8rem;
+	    	}
+	    	
+	    	.explain .exp2{
+	    		font-size: 0.6rem;
+	    	}
+	    	.entr{
+	    		width: 40%;
+	    		height: 1.4rem;
+	    		/*background: #000;*/
+	    		margin: 0 auto;
+	    		margin-top: 1rem;
+	    	}
+	    	.entr .dz{
+	    		width: 1.6rem;
+	    		height: 1.4rem;
+	    		color: #f5b731;
+	    		
+	    		font-size: 0.6rem;
+	    		text-align: center;
+	    	}
+	    	.entr .dj{
+	    		width: 1.6rem;
+	    		height: 1.4rem;
+	    		line-height: 1.4rem;
+	    		color: #f5b731;
+	    		text-align: center;
+	    		font-size: 0.6rem;
+	    	}
+			.statement{
+				margin-left: 2.4rem;
+				width: 2.4rem;
+				height: 0.8rem;
+				text-align: center;
+				line-height: 0.4rem;
+				background: #ccc;
+				margin-top: 1.86rem;
+			}
+			.statement a{
+				color: #fff;
+				font-size: 0.4rem;
+				
+			}
+			.jie_d{
+				width: 100%;
+				
+				
+			}
+			.jie_d img{
+				width: 100%;
+				position: absolute;
+				display: none;
+			}
+			.jie_d .li_01{
+				top: 94.6rem;
+				left: 0;
+			} 
+			
+			.jie_d .li_02{
+				top: 97.7rem;
+				left: 0;
+			} 
+			.jie_d .li_03{
+				top: 100.5rem;
+				left: 0;
+			}
+			.jie_d .li_04{
+				top: 103.4rem;
+				left: 0;
+			}
+			.jie_d .li_05{
+				top: 107.9rem;
+				left: 0;
+			}
+		
+		
+	</style>
+</head>
+<body>
+	<img src="img/cat2.jpg" class="cat"  alt="" />
+	<div class="cont">
+		<div class="imgs">
+			<!--<img src="img/01.jpg" style="display: none;" alt="" />-->
+			<img src="img/blank.gif" data-echo="img/bg.jpg" alt="" />
+			<!--<img src="img/blank.gif" data-echo="img/chb0.jpg" class="bg" alt="" />-->
+			<img src="img/blank.gif" data-echo="img/02.jpg" alt="" />
+			<img src="img/blank.gif" data-echo="img/03.jpg" alt="" />
+			<img src="img/blank.gif" data-echo="img/an_bg.png"  alt="" />
+			<img src="img/blank.gif" data-echo="img/04.jpg" alt="" />
+		</div>
+		<div class="datas">
+			<div class="top">
+				<div class="bgName"></div>
+				<div class="gene">
+					<div class="gene1"></div>
+					<div class="gene2"></div>
+				</div>
+				<div class="bott">
+					<div class="prec">
+						<div class="zdl">战斗力:</div>	
+						<div class="stars"><img src="img/stars3.png" alt="" /></div>	
+					</div>
+					<div class="introduce"></div>
+					<div class="shuyu"></div>
+				</div>
+			</div>
+			
+		
+			<!--百分比和您在这里-->
+			<div class="result">
+				<div class="res1 res">
+					<span class="poem poem1">众人皆醉我独醒20.25%</span>
+					<div class="hear hear1">
+						<span>您在这里</span>
+					</div>
+					
+				</div>
+				<div class="res2 res">
+					<span class="poem poem2">酒逢知己千杯少45.98%</span>
+					<div class="hear hear2">
+						<span>您在这里</span>
+					</div>
+				</div>
+				<div class="res3 res">
+					<span class="poem poem3">怡情小酌酬清兴23.24%</span>
+					<div class="hear hear3">
+						<span>您在这里</span>
+					</div>
+				</div>
+				
+				<div class="res4 res">
+					<span class="poem poem4">美酒一杯情亦浓3.8%</span>
+					<div class="hear hear4">
+						<span>您在这里</span>
+					</div>
+				</div>
+				
+				<div class="res5 res">
+					<span class="poem poem5">酒不醉人人自醉6.73%</span>
+					<div class="hear hear5">
+						<span>您在这里</span>
+					</div>
+				</div>
+			</div>
+			<a class="buy" href="http://w.sanfamily.com.cn/hpv/toBuyAlcoholPage.do"><img src="img/code.png"/></a>
+		</div>
+		
+		
+		
+		<!--抽红包活动-->
+		<!--<div class="get_redbag">
+			<div class="cons">
+				<div class="imgs">
+					<a class="hb_href" href="https://www.baidu.com/">
+						<img class="redBag" src="img/hongbao.png" alt="" />
+					</a>
+				</div>
+				<div class="single_carousel">
+					<ul>
+						<li class="winer"></li>
+						<li class="winer"></li>
+						<li class="winer"></li>
+						<li class="winer"></li>
+						<li class="winer"></li>
+					</ul>
+				</div>
+				<div class="explain">
+					<p class="exp1">活动说明</p>
+					<p class="exp2">是活动是活动说明是活动说明是活动说明是活动说明是活动说明是活动说明是活动说明说明</p>
+				</div>
+				<div class="entr">
+					<a class="fl dz" href="http://www.psjia.com/pssc/fontxz/list_18_5.html">点赞<br/>上传</a>
+					<a class="fr dj" href="http://www.jq22.com/">兑奖</a>
+				</div>
+				<div class="statement"><a href="https://www.csdn.net/">免责声明</a></div>
+				
+				
+			</div>
+		</div>-->
+		<!--酒精代谢基因解读-->
+		<div class="jie_d">
+			<img class="li_01" src="img/liang_01.png" alt="" />
+			<img class="li_02" src="img/liang_02.png" alt="" />
+			<img class="li_03" src="img/liang_03.png" alt="" />
+			<img class="li_04" src="img/liang_04.png" alt="" />
+			<img class="li_05" src="img/liang_05.png" alt="" />
+		</div>
+		
+		
+		
+		
+	</div>
+
+	<script type="text/javascript" src="js/echo.min.js" ></script>
+	<script src="js/flexible.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script>
+		Echo.init({
+			offset:0,
+			throttle:0
+			
+			
+		})
+		
+		
+		
+		
+
+		$(document).ready(function(){
+			
+			function GetRequest() { 
+				var url = location.search; //获取url中"?"符后的字串 
+	//			console.info(url);
+				var theRequest = new Object();
+				if (url.indexOf("?") != -1) { 
+					var str = url.substr(1); 
+					strs = str.split("&"); 
+					for(var i = 0; i < strs.length; i ++) { 
+					  theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+					} 
+				} 
+				return theRequest; 
+				
+			}
+			var ids=GetRequest()
+			localStorage.setItem("userid",ids.userid);
+			localStorage.setItem("orderid",ids.orderid);
+			
+//		console.info(ids.userid+"--+++---"+ids.orderid);
+
+//			$.ajax({
+//				type:"get",
+//				url:"many.json",
+//				async:true,
+//				dataType:"json",
+//				success:function(data){
+//					for(var j=0;j<$(".winer").length;j++){
+//						$(".winer").eq(j).append(data.all[2].list[j].lists); 
+//					}
+//
+//					var name=data.all[0].name;
+//					var sn=data.all[1].sn;
+//					var once=data.all[3].once;
+//					localStorage.setItem("sn",sn);
+//					localStorage.setItem("name",name);
+//					localStorage.setItem("once",once);
+//
+//				},
+//				error:function(data){
+//					console.info("eee");
+//					
+//				}
+//				
+//			});
+			
+			
+//			2017-12-29  新调整接口
+
+			$.ajax({
+				type:"get",
+				url:"http://w.sanfamily.com.cn/alcohol/report2.do",
+				async:true,
+				data:{"userid":ids.userid,"orderid":ids.orderid,"type":"2","token":"ad252sdf4hs32adkifs25a2gasd5a0ae5fsdfhjbvh"},
+				 // 下面的两行代码,就是解决跨域的关键
+				dataType:"jsonp",
+				jsonp:"callback",
+				success:function(data){
+					console.info(data);
+					$(".bgName").html(data.name);
+					$(".gene1").html(data.adh1b);
+					$(".gene2").html(data.aldh2);
+					var lottery=data.lottery;
+					localStorage.setItem("lottery",lottery)
+					
+					localStorage.setItem("sn",data.SN)
+//					console.info(data.list[0])
+					for(var j=0;j<$(".winer").length;j++){
+						$(".winer").eq(j).append(data.list[j]); 
+						localStorage.setItem("list_01",data.list[0]);
+						localStorage.setItem("list_02",data.list[1]);
+						localStorage.setItem("list_03",data.list[2]);
+						localStorage.setItem("list_04",data.list[3]);
+						localStorage.setItem("list_05",data.list[4]);
+						
+					}
+					
+				
+//					等级为1的时候
+					if(data.level==1){
+						$(".shuyu").html("众人皆醉我独醒");
+						$(".li_01").css("display","block")
+						$(".introduce").html("酒精体内清除速率强，代谢较快，喝酒不易脸红。温馨提示：酒量虽好，也不可贪杯哦！");
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+								}
+							}
+						}
+	
+					}
+					
+					
+//					等级为2的时候
+					if(data.level==2){
+						$(".shuyu").html("酒逢知己千杯少");
+						$(".li_02").css("display","block")
+						$(".stars img").css("margin-top","-1.2rem")
+						$(".introduce").html("酒精在体内代谢中等，喝酒不易脸红，建议适当慢饮。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					
+					
+					
+//					等级为3的时候
+					if(data.level==3){
+						$(".shuyu").html("怡情小酌酬清兴");
+						$(".li_03").css("display","block")
+						$(".stars img").css("margin-top","-2.4rem")
+						$(".introduce").html("酒精在体内代谢较慢，饮酒过程中易发生醉酒表现，注意酒驾风险，建议慢饮且选择低度酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					
+					
+					
+					//					等级为4的时候
+					if(data.level==4){
+						$(".shuyu").html("美酒一杯情亦浓");
+						$(".li_04").css("display","block")
+						$(".stars img").css("margin-top","-3.6rem")
+						$(".introduce").html("酒精代谢能力较弱，喝酒容易脸红，建议少饮，慢饮且选择低度酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					//					等级为5的时候
+					
+					
+					if(data.level==5){
+						$(".shuyu").html("酒不醉人人自醉");
+						$(".li_05").css("display","block")
+						$(".stars img").css("margin-top","-4.9rem")
+						$(".introduce").html("酒精在体内代谢很慢，饮酒过程中极易发生酒精性脸红等乙醛中毒表现，强烈建议不要饮酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+//					level为6的时候
+
+					if(data.level==6){
+						$(".cont").css("display","none");
+						$(".cat").show();
+					}
+				
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+				},
+				error:function(data){
+					console.info("cccc")
+					
+				}
+				
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			$.ajax({
+				type:"GET",
+//				url:"http://w.sanfamily.com.cn/alcohol/report.do",
+				async:true,
+//				data:{"userid":ids.userid,"orderid":ids.orderid,"type":"2","token":"ad252sdf4hs32adkifs25a2gasd5a0ae5fsdfhjbvh"},
+				dataType:"jsonp",
+				jsonp:"callback",
+				success:function(data){
+//					console.info(data+"-------");
+					$(".bgName").html(data.name);
+					$(".gene1").html(data.adh1b);
+					$(".gene2").html(data.aldh2);
+					
+//					等级为1的时候
+					if(data.level==1){
+						$(".shuyu").html("众人皆醉我独醒");
+						$(".li_01").css("display","block")
+						$(".introduce").html("酒精体内清除速率强，代谢较快，喝酒不易脸红。温馨提示：酒量虽好，也不可贪杯哦！");
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+								}
+							}
+						}
+	
+					}
+					
+					
+//					等级为2的时候
+					if(data.level==2){
+						$(".shuyu").html("酒逢知己千杯少");
+						$(".li_02").css("display","block")
+						$(".stars img").css("margin-top","-1.2rem")
+						$(".introduce").html("酒精在体内代谢中等，喝酒不易脸红，建议适当慢饮。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					
+					
+					
+//					等级为3的时候
+					if(data.level==3){
+						$(".shuyu").html("怡情小酌酬清兴");
+						$(".li_03").css("display","block")
+						$(".stars img").css("margin-top","-2.4rem")
+						$(".introduce").html("酒精在体内代谢较慢，饮酒过程中易发生醉酒表现，注意酒驾风险，建议慢饮且选择低度酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					
+					
+					
+					//					等级为4的时候
+					if(data.level==4){
+						$(".shuyu").html("美酒一杯情亦浓");
+						$(".li_04").css("display","block")
+						$(".stars img").css("margin-top","-3.6rem")
+						$(".introduce").html("酒精代谢能力较弱，喝酒容易脸红，建议少饮，慢饮且选择低度酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+					//					等级为5的时候
+					
+					
+					if(data.level==5){
+						$(".shuyu").html("酒不醉人人自醉");
+						$(".li_05").css("display","block")
+						$(".stars img").css("margin-top","-4.9rem")
+						$(".introduce").html("酒精在体内代谢很慢，饮酒过程中极易发生酒精性脸红等乙醛中毒表现，强烈建议不要饮酒。");
+						
+						for(var i=0;i<$(".res").length;i++){
+			//				console.info($(".res").eq(i).children().html());
+							var con=$(".res").eq(i).children().html();
+							var shuyu=$(".shuyu").html();
+							if(con.indexOf(shuyu)>-1){
+			//					console.info("aaaaaa");
+								 $(".res").eq(i).find("span").eq(0).css("background","#8cecfa");
+								 $(".res").eq(i).find("div").eq(0).css("opacity",1);
+								 $(".res").eq(i).find("span").eq(0).css("font-weight","600");
+								if(shuyu=="酒不醉人人自醉"){
+									 $(".res").eq(i).find("span").eq(1).css("opacity",1);
+									
+									
+								}
+								
+								
+							}
+						}
+	
+					}
+					
+//					level为6的时候
+
+					if(data.level==6){
+						$(".cont").css("display","none");
+						$(".cat").show();
+					}
+					
+					
+					
+				}
+				
+				
+				
+				
+				
+				
+				
+			});
+			
+			
+			
+		})
+	
+		
+			/*单行轮播*/
+			$(function(){
+				function fun(){
+					$(".single_carousel ul").animate({"margin-top":"-1.4rem"},function(){    
+						    $(".single_carousel ul li:eq(0)").appendTo($(".single_carousel ul"));
+							$(".single_carousel ul").css("margin-top",0);    //css中属性与属性值用逗号隔开
+						});
+			       }
+				setInterval(fun,2000);
+				
+			});
+			
+//			抽红包判断是否点赞上传
+			$(function(){
+				$(".redBag").on("click",function(){
+//					$(".hb_href").removeAttr("href");     //禁用a链接
+					console.info("aaa");
+					$(".hb_href").attr("href","https://www.baidu.com/");    //启用
+					
+				})
+				
+				
+				
+				
+			})
+		
+	
+		
+		
+		
+		
+		
+
+       
+	</script>
+</body>
+</html>

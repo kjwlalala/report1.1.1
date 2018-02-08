@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+body{
+	font-size: 14px;
+}
+.fileUploadContent .uploadBts div .selectFileBt{
+	background: #ccc;
+	
+	
+	
+}
+.btn{
+	width: 96%;
+	height: .8rem;
+	line-height: .8rem;
+	/*background: #CCCCCC;*/
+	margin: 0 auto;
+}
+.sub{
+	width: 100%;
+	height: 1.62rem;
+	background: #0099FF;
+	border-radius: .4rem;
+	outline: none;
+	color: #FFFFFF;
+	border: none;
+	font-size: .8rem;
+	margin-top: 1rem;
+}
+.box .fileItem {
+	width: 50%;
+	box-sizing: border-box;
+	height: auto;
+	border: none;
+	padding: 0;
+	margin: 0;
+	
+	
+}
+.uploadBts{
+	margin-top: 0.4rem;
+	margin-bottom: 0.6rem;
+}
+.cleanFileBt{
+	float: right!important;
+	padding-top: 0.2rem;
+}
+.cleanFileBt i{
+	margin-top: 0.2rem;
+	
+}
+.uploadFileBt{
+	width: 0.2rem;
+	height: 0.2rem;
+	display: inline-block;
+	border: 1px solid #000;
+	margin-top: 0.2rem;
+}
+.fileUploadContent .uploadBts>div i{
+	font-size: 1.2rem;
+	margin-top: .2rem;
+	
+	
+}
+.fileUploadContent .uploadBts>div .selectFileBt{
+	margin-left: 0.2rem;
+	height: 1rem;
+	line-height: 1rem;
+	
+	
+}

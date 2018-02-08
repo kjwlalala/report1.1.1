@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<style>
+			*{
+				margin: 0;padding: 0;	
+			}
+			html{
+				font-size: 20px;
+			}
+			
+			#file {
+				width: 100%;
+				height: 15rem;
+				position: relative;
+				margin-top: 1rem;
+				padding-top: 1rem;
+			}
+			
+			#filetxt {
+				width: 60%;
+				height: 1rem;
+				font-size: 0.6rem;
+				position: absolute;
+				top: 1.2rem;
+				left: 1rem;
+			}
+			
+			#filebtn {
+				position: absolute;
+				/*left: 180px;*/
+				left: 12rem;
+				width: 3rem;
+				top: 1.2rem;
+				height: 1rem;
+				font-size: 0.5rem;
+				
+			}
+			
+			#upfile {
+				/*width: 70px;*/
+				width: 0.7rem;
+				position: absolute;
+				opacity: 0;
+				width: 3rem;
+			    top: 1.2rem;
+			    height: 1rem;
+			    left: 12rem;
+			    font-size: 0.5rem;
+				
+				
+				
+			}
+			
+			.lay {
+				width: 100%;
+				height: 10rem;
+				background: #000;
+				position: absolute;
+				z-index: 400;
+				left: 0;
+				top: -0.4rem;
+				opacity: 0.6;
+				display: none;
+			}
+			
+			.pop .tel {
+				width: 100%;
+				height: 1.2rem;
+				border-radius: 0.4rem;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+				outline: none;
+				font-size: 0.6rem;
+			}
+			
+			.sub2 {
+				width: 64%;
+				height: 1.2rem;
+				position: fixed;
+				font-size: 0.6rem;
+				top: 11rem;
+				left: 50%;
+				border-radius: 0.4rem;
+				border: none;
+				outline: none;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+			}
+			
+			.yzm {
+				width: 60%;
+				height: 1.2rem;
+				font-size: 0.6rem;
+				border-radius: 0.4rem;
+				border: 1px solid #ccc;
+				outline: none;
+			}
+			
+			.yzm_02 {
+				width: 38%;
+				height: 1.2rem;
+				float: right;
+				border-radius: 0.4rem;
+				border: none;
+				outline: none;
+				font-size: 0.6rem;
+			}
+			
+			.telWap {
+				position: fixed;
+				width: 64%;
+				top: 3.8rem;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+			}
+			
+			.yzmWap {
+				width: 64%;
+				position: fixed;
+				top: 8.6rem;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+			}
+			
+			.hint {
+				width: 64%;
+				height: 0.6rem;
+				position: fixed;
+				text-align: center;
+				top: 2.2rem;
+				left: 50%;
+				color: #FF0000;
+				display: none;
+				font-size: 0.6rem;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+			}
+			
+			.pop {
+				width: 90%;
+				height: 15rem;
+				background: #fff;
+				margin: 0 auto;
+				position: fixed;
+				top: 4rem;
+				z-index: 5555;
+				left: 50%;
+				display: none;
+				border-radius: 0.4rem;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+			}
+			.wxhWap{
+   				width: 64%;
+			    margin: 0 auto;
+			    position: absolute;
+			    top: 6.2rem;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+	   			-webkit-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+   				
+   			}
+   			.wxhWap .wxh{
+   				width: 100%;
+   				height: 1.2rem;
+   				font-size: 0.6rem;
+   				border-radius: 0.4rem;
+   				border: 1px solid #ccc;
+   				outline: none;
+   				
+   			}
+			.up_btn{
+				width: 64%;
+				height: 1.2rem;
+				border-radius: 0.6rem;
+				font-size: 0.8rem;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				border: none;
+				outline: none;
+				margin-top: 10rem;
+				
+			}
+			.file_btn{
+				width: 13rem;
+				height: 2rem;
+				font-size: 1rem;
+				/*opacity: 0;*/
+				z-index: 99999;
+			}
+			/*.choose_pic{
+				width: 3.6rem;
+				height: 2rem;
+				background: #f45;
+				position: absolute;
+				top: 0;
+				z-index: 0;
+			}*/
+			.file_lab{
+				width: 3rem;
+				height: 2rem;
+				background: #f45;
+				border-radius: 0.6rem;
+				
+			}
+			
+			
+			
+			
+			
+		</style>
+		<!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+
+	</head>
+
+	<body>
+		<div id="file">
+			<form name="form1" id="form1"  enctype="multipart/form-data">
+				<!--<input id="filetxt" type="text" value="" />
+
+				<input id="filebtn" type="button" value="选择点赞图片" />
+	-->
+				<!--<input id='upfile' type="file" />-->
+			
+				<input type="file" class="file_btn" name="photo" id="photo">
+					
+			
+				
+				 
+				 
+				 <!--<p class="choose_pic">选取图片</p>-->
+				 <input type="button" value="上传" class="up_btn" onclick="fsubmit()" />
+
+			</form>
+
+<!--
+			<form name="form1" id="form1" enctype="multipart/form-data">
+		        <p>photo:<input type="file" name="photo" id="photo"></p>
+		        <p><input type="button" name="b1" value="submit" onclick="fsubmit()"></p>
+		    </form>-->
+
+
+			
+		</div>
+
+		<div class="pop">
+			<div class="hint">点点滴滴</div>
+			<div class="telWap"><input class="tel" id="tel" type="text" placeholder="请输入手机号验证您的身份" /></div>
+			<div class="wxhWap"><input class="wxh" placeholder="请输入您的微信号" type="text" /></div>
+			<div class="yzmWap"><input class="yzm" id="yzm" type="text" placeholder="请输入验证码" /><input type="button" id="get_yzm" class="yzm_02" value="获取验证码" onclick="sendMessage(this)" /> </div>
+			<button class="sub2" id="sub2">提交</button>
+		</div>
+		<div class="lay">
+
+		</div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/flexible.js" ></script>
+		<script>
+			$(function() {
+				$('#upfile').change(function() {
+					$('#filetxt').val($('#upfile').val());
+				});
+			});
+			$(function() {
+				$("#sub2").on("click", function() {
+					var reg1 = /^1[3|4|5|8|9][0-9]\d{4,8}$/;
+					var wxreg = /^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}$/
+					var yzmCode = localStorage.getItem("vcode");
+					console.info(yzmCode + "验证码")
+
+					// 					var this_person=localStorage.getItem("this_person");
+					if(!reg1.test($("#tel").val())) {
+						$(".hint").css("display", "block").html("请输入合法的手机号");
+						return;
+					}
+					if(!wxreg.test($(".wxh").val())) {
+						$(".hint").css("display", "block").html("请输入合法的微信号");
+						return;
+					}
+
+					if($(".yzm").val() == " " || $(".yzm").val() == "" || $(".yzm").val() == null) {
+						$(".hint").css("display", "block").html("请输入验证码");
+						return;
+					}
+					if($(".yzm").val().length > 0 && $(".yzm").val() != yzmCode) {
+						$(".hint").css("display", "block").html("验证码不匹配");
+						return;
+					}
+
+					// 					else{
+					//		       			$(".hint").css("display","none").html("");
+					//		       			
+					//		       		}
+					//		       		
+
+					if(reg1.test($("#tel").val()) && $(".yzm").val() == yzmCode) {
+						var dz_tel = $(".tel").val();
+						localStorage.setItem("dz_tel", dz_tel);
+						
+						
+						
+						
+						
+						
+						
+						$(".hint").css("display", "block").html("点赞图片上传成功，快去抽奖吧");
+//						var opt = uploadTools.getOpt("fileUploadContent");
+//						uploadEvent.uploadFileEvent(opt);
+							var pic_file=localStorage.getItem("pic_file");
+							var dz_tel=localStorage.getItem("dz_tel");
+							var orderid=localStorage.getItem("orderid");
+							var userid=localStorage.getItem("userid");
+							var wxh=localStorage.getItem("wxh");
+							uploadfile();
+							$.ajax({
+								type:"post",
+								url:"http://139.196.120.14/alcohol/updatestatus.do?",
+								data: {
+									"&mobile=": dz_tel,
+									"&userid=": userid,
+									"&orderid=": orderid,
+									"&wechat": wxh,
+									"&dianzanpicpath": pic_file,
+									"&type": "2",
+									"&token": "ad252sdf4hs32adkifs25a2gasd5a0ae5fsdfhjbvh"
+								},
+								async:true,
+								success:function(data){
+									var skip = confirm("您已上传成功，现在就去抽奖吧")
+									if(skip){
+										window.history.go(-1);
+										
+									}
+								},
+								error:function(data){
+									var skip = confirm("您的上传没有通过验证，请检查后重试")
+									if(skip){
+										window.history.go(-1);
+										
+									}
+									
+								}
+								
+								
+								
+								
+							});
+							
+							
+							
+							
+							window.history.go(-1);
+
+					}
+
+				})
+
+			})
+
+			var InterValObj; //timer变量，控制时间  
+			var count = 60; //间隔函数，1秒执行  
+			var curCount; //当前剩余秒数  
+			var code = ""; //验证码  
+			var codeLength = 6; //验证码长度  
+			var dz_tel = localStorage.setItem("dz_tel", 15738871759);
+
+			function sendMessage() {
+				curCount = count;
+				var reg1 = /^1[3|4|5|8|9][0-9]\d{4,8}$/;
+				var phone = $("#tel").val(); //手机号码  
+				if(phone != "") {
+					//产生验证码  
+					for(var i = 0; i < codeLength; i++) {
+						code += parseInt(Math.random() * 9).toString();
+					}
+
+					//		    	如果手机号验证正确发送请求
+					if(reg1.test($("#tel").val())) {
+						$(".hint").css("display", "block").html("");
+						//设置button效果，开始计时  
+						$("#get_yzm").attr("disabled", "true");
+						$("#get_yzm").val("请在" + curCount + "秒内输入验证码");
+						InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次  
+						var code_lenth = $(".yzm").val().length;
+						var code = $(".yzm").val();
+						var wxh = $(".wxh").val();
+						var userid = localStorage.getItem("userid");
+						var orderid = localStorage.getItem("orderid");
+						var wxh = localStorage.getItem("wxh");
+
+						$.ajax({
+							type: "post", //用POST方式传输  
+							dataType: "jsonp",
+							jsonp: "callback",
+							url: "http://139.196.120.14/alcohol/sendsms.do?",
+							data: {
+								"mobile=": phone,
+								"&userid=": userid,
+								"&ordered=": orderid,
+								"&wechat": wxh,
+								"type": "2",
+								"token": "ad252sdf4hs32adkifs25a2gasd5a0ae5fsdfhjbvh"
+							},
+							success: function(data) {
+								var vcode = data.vcode;
+								localStorage.setItem("vcode", vcode);
+//								if(code != $(".yzm").val()) {
+//									//			            		
+//								} else if(code == $(".yzm").val()) {
+//									$(".hint").css("display", "block").html("请点击提交");
+//
+//								}
+							},
+							error: function(data) {
+								console.info("网络错误")
+							}
+
+						});
+					} else {
+						$(".hint").css("display", "block").html("请输入合法的手机号");
+					}
+
+				} else {
+					$(".hint").css("display", "block").html("请先输入手机号");
+				}
+			}
+
+			//timer处理函数  
+			function SetRemainTime() {
+				if(curCount == 0) {
+					window.clearInterval(InterValObj); //停止计时器  
+					$("#get_yzm").removeAttr("disabled"); //启用按钮  
+					$("#get_yzm").val("重新发送");
+					code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效      
+				} else {
+					curCount--;
+					$("#get_yzm").val(curCount + "秒");
+				}
+			}
+
+			function fsubmit() {
+				var v = $("#filetxt").val();
+				console.info(v);
+				if(true) {
+					showDialog()
+
+					
+//					console.info(data+"产生的农村教师")
+//					JOSN.stringify(data);
+					
+					return false;
+
+				} else {
+					alert("请上传图片");
+
+				}
+
+			}
+
+			function uploadfile(){
+				var data = new FormData($('#form1')[0]);
+				var pic_file=$(".file_btn").val();
+				localStorage.setItem("pic_file",pic_file)
+				
+				$.ajax({
+						url: 'http://139.196.120.14/uploadfile.do',
+						type: 'POST',
+						data: data,
+						dataType: 'JSON',
+						cache: false,
+						processData: false,
+						contentType: false,
+						success: function(data) {
+							console.info(data);
+
+						},
+						error: function(data) {
+							console.info("ggaga")
+
+						}
+
+					}).done(function(ret) {
+						if(ret['isSuccess']) {
+							var result = '';
+							result += 'name=' + ret['name'] + '<br>';
+							result += 'gender=' + ret['gender'] + '<br>';
+							result += '<img src="' + ret['photo'] + '" width="100">';
+							$('#result').html(result);
+						} else {
+							alert('提交失敗');
+						}
+					});
+				
+				
+				
+			}
+
+
+
+
+			function showDialog() {
+
+				$(".pop").show();
+				$(".lay").show();
+
+				var dH = $(document).height(); //获取文档的高度
+				$(".lay").css("height", dH); //黑色遮罩层高度设置为文档高度
+				var wW = $(window).width(), //window的宽度
+					wH = $(window).height(), //window的高度
+					pW = $(".pop").width(), //弹出层的宽度
+					pH = $(".pop").height(), //弹出层的高度
+					pL = (wW - pW) / 2.25,
+					pT = (wH - pH) / 2;
+			}
+
+			$(".lay").bind("click", function() {
+				$(".lay").fadeOut();
+				$(".pop").hide();
+			});
+		</script>
+
+	</body>
+
+</html>
